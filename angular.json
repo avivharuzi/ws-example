@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "chat": {
+      "projectType": "library",
+      "root": "libs/chat",
+      "sourceRoot": "libs/chat/src",
+      "prefix": "ws-example",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/chat"],
+          "options": {
+            "jestConfig": "libs/chat/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/chat/src/**/*.ts",
+              "libs/chat/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "ws-api": {
       "root": "apps/ws-api",
       "sourceRoot": "apps/ws-api/src",

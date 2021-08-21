@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ws-example/chat": ["libs/chat/src/index.ts"],
       "@ws-example/ws-wrappers": ["libs/ws-wrappers/src/index.ts"]
     }
   },
