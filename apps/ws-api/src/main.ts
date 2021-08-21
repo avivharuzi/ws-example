@@ -3,7 +3,7 @@ import * as faker from 'faker';
 import { Server } from 'ws';
 
 const wsServer = new Server({ port: 8080 });
-const usersList: ChatUser[] = [];
+let usersList: ChatUser[] = [];
 
 wsServer.on('connection', (ws) => {
   const sendToAll = (message: ChatMessage): void => {
@@ -34,46 +34,47 @@ wsServer.on('connection', (ws) => {
     username: faker.internet.userName(),
   };
 
-  usersList.push(user);
+  usersList = [...usersList, user];
 
-  ws.on('open', () => {
-    sendToSelf({
-      type: ChatMessageType.UserDetails,
-      data: {
-        userDetails: {
-          user,
-        },
+  sendToSelf({
+    type: ChatMessageType.UserDetails,
+    data: {
+      userDetails: {
+        user,
       },
-    });
+    },
+  });
 
-    sendToSelf({
-      type: ChatMessageType.UsersList,
-      data: {
-        usersList: {
-          users: usersList,
-        },
+  sendToSelf({
+    type: ChatMessageType.UsersList,
+    data: {
+      usersList: {
+        users: usersList,
       },
-    });
+    },
+  });
 
-    sendToAllExceptSelf({
-      type: ChatMessageType.UserJoin,
-      data: {
-        userJoin: {
-          user,
-        },
+  sendToAllExceptSelf({
+    type: ChatMessageType.UserJoin,
+    data: {
+      userJoin: {
+        user,
       },
-    });
+    },
   });
 
   ws.on('close', () => {
     sendToAllExceptSelf({
       type: ChatMessageType.UserLeave,
       data: {
-        userJoin: {
+        userLeave: {
           user,
         },
       },
     });
+    usersList = usersList.filter(
+      (userItem) => userItem.username !== user.username
+    );
   });
 
   ws.on('message', (data) => {

@@ -13,7 +13,7 @@ export interface ChatMessage {
 export enum ChatMessageType {
   UsersList = 'UsersList',
   UserJoin = 'UserJoin',
-  UserLeave = 'UserJoin',
+  UserLeave = 'UserLeave',
   UserDetails = 'UsersDetails',
   SendMessage = 'SendMessage',
   AcceptMessage = 'AcceptMessage',
