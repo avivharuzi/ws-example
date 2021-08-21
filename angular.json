@@ -169,6 +169,31 @@
           }
         }
       }
+    },
+    "ws-wrapper": {
+      "projectType": "library",
+      "root": "libs/ws-wrapper",
+      "sourceRoot": "libs/ws-wrapper/src",
+      "prefix": "ws-example",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ws-wrapper"],
+          "options": {
+            "jestConfig": "libs/ws-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ws-wrapper/src/**/*.ts",
+              "libs/ws-wrapper/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

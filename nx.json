@@ -36,6 +36,9 @@
     "ws-example-e2e": {
       "tags": [],
       "implicitDependencies": ["ws-example"]
+    },
+    "ws-wrapper": {
+      "tags": []
     }
   }
 }
