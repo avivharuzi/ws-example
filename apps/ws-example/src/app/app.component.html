@@ -1,0 +1,23 @@
+<ng-container *ngIf="connect$ | async"></ng-container>
+<p *ngIf="userDetails$ | async as userDetails">
+  You are logged in as: {{ userDetails.username }}
+</p>
+<div *ngIf="users$ | async as users">
+  Active users:
+  <ng-container *ngFor="let user of users">{{ user.username }}</ng-container>
+</div>
+<div>
+  <input #message type="text" placeholder="Write a message..." />
+  <button (click)="sendMessage(message.value)">Send</button>
+</div>
+<div
+  *ngFor="let message of messages$ | async"
+  class="message"
+  [class.message-active]="
+    message.user.username === (userDetails$ | async)?.username
+  "
+>
+  <p>Username: {{ message.user.username }}</p>
+  <p>Message: {{ message.content }}</p>
+  <p>Date: {{ message.createdAt | date }}</p>
+</div>
