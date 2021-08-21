@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'ws-wrapper',
+  displayName: 'ws-wrappers',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/ws-wrapper',
+  coverageDirectory: '../../coverage/libs/ws-wrappers',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

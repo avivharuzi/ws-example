@@ -170,17 +170,17 @@
         }
       }
     },
-    "ws-wrapper": {
+    "ws-wrappers": {
       "projectType": "library",
-      "root": "libs/ws-wrapper",
-      "sourceRoot": "libs/ws-wrapper/src",
+      "root": "libs/ws-wrappers",
+      "sourceRoot": "libs/ws-wrappers/src",
       "prefix": "ws-example",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ws-wrapper"],
+          "outputs": ["coverage/libs/ws-wrappers"],
           "options": {
-            "jestConfig": "libs/ws-wrapper/jest.config.js",
+            "jestConfig": "libs/ws-wrappers/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -188,8 +188,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/ws-wrapper/src/**/*.ts",
-              "libs/ws-wrapper/src/**/*.html"
+              "libs/ws-wrappers/src/**/*.ts",
+              "libs/ws-wrappers/src/**/*.html"
             ]
           }
         }

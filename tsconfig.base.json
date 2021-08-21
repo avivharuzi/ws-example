@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ws-example/ws-wrapper": ["libs/ws-wrapper/src/index.ts"]
+      "@ws-example/ws-wrappers": ["libs/ws-wrappers/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
