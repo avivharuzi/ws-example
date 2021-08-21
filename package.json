@@ -37,6 +37,7 @@
     "@angular/platform-browser": "^12.1.0",
     "@angular/platform-browser-dynamic": "^12.1.0",
     "@angular/router": "^12.1.0",
+    "@datorama/akita": "^6.2.3",
     "@nrwl/angular": "12.6.6",
     "faker": "^5.5.3",
     "rxjs": "~6.6.0",
