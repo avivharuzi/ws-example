@@ -42,6 +42,7 @@ export interface ChatDataSendMessage {
 export interface ChatDataAcceptMessage {
   user: ChatUser;
   content: string;
+  createdAt: Date;
 }
 
 export interface ChatUser {

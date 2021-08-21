@@ -85,6 +85,7 @@ wsServer.on('connection', (ws) => {
           acceptMessage: {
             user,
             content: dataParsed.data.sendMessage.content,
+            createdAt: new Date(),
           },
         },
       });
