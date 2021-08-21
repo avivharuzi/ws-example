@@ -25,7 +25,9 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "start:ws-example": "nx serve ws-example",
+    "start:ws-api": "nx serve ws-api"
   },
   "private": true,
   "dependencies": {
